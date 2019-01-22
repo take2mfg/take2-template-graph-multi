@@ -3,7 +3,7 @@ import { startSequelize } from '../../../utils/sequelize/startSequelize';
 
 
 const startDB = async () => {
-  const db = await startSequelize('___BASE____', Models);
+  const db = await startSequelize('___BASE_____', Models);
   return db;
 }
 
