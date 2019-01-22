@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "indent": [1, 2],
+    "quotes": [1, "single"],
+    "no-unused-vars": "warn",
+    "no-undef": "error"
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "expect": true,
+    "apps": true,
+    "request": true
+  }
+}
