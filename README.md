@@ -45,7 +45,6 @@ Next, you'll need to create a `.env` file in your `root (/)` directory.  You can
 
 ```
 $ npm run dev          - Runs app against Sequelize Resolver
-$ npm run stub         - Runs app against Stub Resolver (recommended)
 ```
 App starts on port 3344;
 

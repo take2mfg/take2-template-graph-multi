@@ -8,7 +8,6 @@
     "nock": "NOCK_RECORD=true node index.js",
     "prod": "node index.js",
     "start": "echo 'Please run dev or prod'",
-    "stub": "USE_STUBS=true node index.js",
     "test-all": "NODE_ENV=test npm run test && npm run test-migrations",
     "test-graph": "NODE_ENV=test mocha --trace-warnings 'apps/**/test/graph/**/*.spec.js'",
     "test-migrations": "NODE_ENV=test mocha --trace-warnings 'apps/**/test/migrations/**/*.spec.js'",
