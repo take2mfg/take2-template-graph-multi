@@ -7,7 +7,7 @@ import GraphQLPlayground from 'graphql-playground-middleware-express';
 import Logger from './services/logger';
 
 // Apps
-import CoreApp from './apps/core';
+import ___BASE___App from './apps/___base___';
 
 const server = express();
 const port = process.env.PORT || 3344;
@@ -45,7 +45,7 @@ server.use(expressWinston.errorLogger({
 if (process.env.NODE_ENV !== 'production') {
   server.use('/playground', GraphQLPlayground({
     tabs: [
-      { name: 'Core App', endpoint: '/core/graphql' },
+      { name: '___BASE___ App', endpoint: '/___base___/graphql' },
     ]
   }))
 }
@@ -53,7 +53,7 @@ if (process.env.NODE_ENV !== 'production') {
 export const startServer = async () => {
 
   // Start apps
-  server.use('/core', await CoreApp());
+  server.use('/___base___', await ___BASE___App());
 
   // Listen
   server.listen(port, () => {
