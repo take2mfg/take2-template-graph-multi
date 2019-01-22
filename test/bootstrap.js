@@ -1,6 +1,6 @@
 import server from '../server';
 
-import { appWithFactory as StartCoreApp } from '../apps/core';
+import { appWithFactory as Start___Base___App } from '../apps/___base___';
 
 const setup = async () => {
 
@@ -9,10 +9,10 @@ const setup = async () => {
 
 
   // Setup apps
-  const CoreApp = await StartCoreApp();
+  const ___Base___App = await Start___Base___App();
 
   global.apps = {
-    CoreApp,
+    ___Base___App,
   };
 
   // Shut it down
