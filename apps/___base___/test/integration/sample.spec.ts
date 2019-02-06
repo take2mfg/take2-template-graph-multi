@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { gql } from 'apollo-server-express';
 
 

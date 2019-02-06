@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import schema from '../../src/graphql/schema';
 
 describe('Sample - Graph', () => {

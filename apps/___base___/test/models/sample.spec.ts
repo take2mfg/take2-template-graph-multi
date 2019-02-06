@@ -1,3 +1,5 @@
+import { expect } from 'chai';
+
 describe('Sample - Model', () => {
 
   it('should create', async () => {

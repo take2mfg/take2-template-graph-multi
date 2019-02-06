@@ -5,6 +5,7 @@ require('@babel/register');
 require('@babel/polyfill');
 
 import {map, values, keyBy} from 'lodash';
+import { expect } from 'chai';
 import Migration from '../../../../utils/sequelize/migration';
 
 async function dropTables(sequelize) {

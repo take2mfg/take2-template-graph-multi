@@ -1,4 +1,5 @@
 import { get } from 'lodash';
+import { expect } from 'chai';
 
 describe('Sample', () => {
   it('should run a test with es7 features', () => {

@@ -33,7 +33,7 @@ export const startSequelize = async (appKey, Models) => {
     const sequelize = new Sequelize(database, username, password, options);
 
 
-    const db = {};
+    const db:any = {};
 
     // Load the models
     each(Models, ({ name, define }) => {
@@ -54,7 +54,7 @@ export const startSequelize = async (appKey, Models) => {
     db.sequelize = sequelize;
     db.Sequelize = Sequelize;
 
-    let syncOptions = {};
+    let syncOptions:any = {};
     if (process.env.NODE_ENV === 'test') {
       syncOptions.force = true;
     }
