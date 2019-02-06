@@ -19,10 +19,6 @@ server.use(expressWinston.logger({
     new winston.transports.Console()
   ],
   level: () => process.env.LOG_LEVEL || 'verbose',
-  format: winston.format.combine(
-    winston.format.colorize(),
-    winston.format.json()
-  ),
   // meta: true, // optional: control whether you want to log the meta data about the request (default to true)
   // msg: "HTTP {{req.method}} {{req.url}}", // optional: customize the default logging message. E.g. "{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}"
   expressFormat: true, // Use the default Express/morgan request formatting. Enabling this will override any msg if true. Will only output colors with colorize set to true
@@ -36,16 +32,12 @@ server.use(expressWinston.errorLogger({
   transports: [
     new winston.transports.Console(),
   ],
-  format: winston.format.combine(
-    winston.format.colorize(),
-    winston.format.json(),
-  ),
 }));
 
 if (process.env.NODE_ENV !== 'production') {
   server.use('/playground', GraphQLPlayground({
     tabs: [
-      { name: '___Base___ App', endpoint: '/___base___/graphql' },
+      { query: '{}', endpoint: '/___base___/graphql' },
     ]
   }))
 }

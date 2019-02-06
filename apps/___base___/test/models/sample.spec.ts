@@ -1,3 +1,6 @@
+import { expect } from 'chai';
+const {apps} = global;
+
 describe('Sample - Model', () => {
 
   it('should create', async () => {

@@ -2,8 +2,9 @@ import Umzug from 'umzug';
 import Sequelize from 'sequelize';
 
 class Migration {
-  constructor(options = {}) {
+  umzug:Umzug;
 
+  constructor(options:any = {}) {
     if (!options.path) {
       throw new Error('No path defined for migrations');
     }

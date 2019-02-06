@@ -1,5 +1,7 @@
+import { expect } from 'chai';
 import { gql } from 'apollo-server-express';
 
+const {apps, request} = global;
 
 describe('Sample - Integration', () => {
 

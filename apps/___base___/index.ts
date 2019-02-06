@@ -11,7 +11,7 @@ const startApp = async () => {
   /*
     Set up your express app & any custom routes
   */
-  const app = express();
+  const app:any = express();
 
 
   app.get('/hello', (req, res) => {
