@@ -1,7 +1,4 @@
 --delay
 --reporter spec
---require ts-node/register
---require @babel/register
---require @babel/polyfill
---require test/setup
---require test/bootstrap
+--require test/setup.ts
+--require test/bootstrap.ts

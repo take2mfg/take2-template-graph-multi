@@ -6,7 +6,7 @@ describe('Sample - Graph', () => {
   let type;
 
   before(() => {
-    type = schema._typeMap['Sample'];
+    type = schema.getTypeMap()['Sample'];
   });
 
   it('should have the right fields', () => {

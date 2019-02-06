@@ -11,7 +11,7 @@
     "test-all": "NODE_ENV=test npm run test && npm run test-migrations",
     "test-graph": "NODE_ENV=test mocha --trace-warnings 'apps/**/test/graph/**/*.spec.ts'",
     "test-migrations": "NODE_ENV=test mocha --trace-warnings 'apps/**/test/migrations/**/*.spec.ts'",
-    "test": "NODE_ENV=test mocha --trace-warnings 'test/**/*.spec.ts' 'apps/**/test/{,!(migrations)/**/}*.spec.ts'"
+    "test": "NODE_ENV=test mocha --require ts-node/register --trace-warnings 'test/**/*.spec.ts' 'apps/**/test/{,!(migrations)/**/}*.spec.ts'"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +39,7 @@
     "@babel/register": "^7.0.0",
     "@types/dotenv-safe": "^5.0.3",
     "@types/express-winston": "^3.0.0",
+    "@types/graphql": "^14.0.5",
     "apollo-server-express": "^2.2.4",
     "dotenv-safe": "^6.1.0",
     "express": "^4.16.4",
@@ -47,7 +48,7 @@
     "faker": "^4.1.0",
     "graphql": "^14.0.2",
     "graphql-bigint": "^1.0.0",
-    "graphql-playground-middleware-express": "^1.7.8",
+    "graphql-playground-middleware-express": "^1.7.11",
     "graphql-relay": "^0.5.5",
     "graphql-sequelize": "^9.2.0",
     "graphql-type-json": "^0.2.1",
