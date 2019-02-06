@@ -35,32 +35,34 @@ export const startSequelize = async (appKey, Models) => {
 
     const db:any = {};
 
-    // Load the models
-    each(Models, ({ name, define }) => {
-      const model = sequelize['import'](name, define);
-      db[name] = model;
-    });
+    if (Models && Models.length) {
+      // Load the models
+      each(Models, ({ name, define }) => {
+        const model = sequelize['import'](name, define);
+        db[name] = model;
+      });
 
 
-    // Associate them
-    each(keys(db), model => {
-      const associate = get(db[model], 'options.classMethods.associate');
-      if (associate) {
-        associate(db);
+      // Associate them
+      each(keys(db), model => {
+        const associate = get(db[model], 'options.classMethods.associate');
+        if (associate) {
+          associate(db);
+        }
+      });
+
+
+      db.sequelize = sequelize;
+      db.Sequelize = Sequelize;
+
+      let syncOptions:any = {};
+      if (process.env.NODE_ENV === 'test') {
+        syncOptions.force = true;
       }
-    });
 
 
-    db.sequelize = sequelize;
-    db.Sequelize = Sequelize;
-
-    let syncOptions:any = {};
-    if (process.env.NODE_ENV === 'test') {
-      syncOptions.force = true;
+      await db.sequelize.sync({ force: true });
     }
-
-
-    await db.sequelize.sync({ force: true });
 
 
     return db;

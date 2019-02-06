@@ -11,7 +11,7 @@
     "test-all": "NODE_ENV=test npm run test && npm run test-migrations",
     "test-graph": "NODE_ENV=test mocha --trace-warnings 'apps/**/test/graph/**/*.spec.ts'",
     "test-migrations": "NODE_ENV=test mocha --trace-warnings 'apps/**/test/migrations/**/*.spec.ts'",
-    "test": "NODE_ENV=test mocha --require ts-node/register --trace-warnings 'test/**/*.spec.ts' 'apps/**/test/{,!(migrations)/**/}*.spec.ts'"
+    "test": "NODE_ENV=test TS_NODE_FILES=true mocha --trace-warnings 'test/**/*.spec.ts' 'apps/**/test/{,!(migrations)/**/}*.spec.ts'"
   },
   "keywords": [],
   "author": "",
