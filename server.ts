@@ -50,6 +50,7 @@ export const startServer = async () => {
   // Listen
   server.listen(port, () => {
     console.log(`App running at port ${port}`);
+    console.log(`Graph Playground available at http://localhost:${port}/playground`);
   });
 }
 
