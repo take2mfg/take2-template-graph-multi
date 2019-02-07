@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import schema from '../../src/graphql/schema';
 
-describe('Sample - Graph', () => {
+describe.skip('Sample - Graph', () => {
 
   let type;
 

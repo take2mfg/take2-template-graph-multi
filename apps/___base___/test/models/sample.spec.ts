@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 const {apps} = global;
 
-describe('Sample - Model', () => {
+describe.skip('Sample - Model', () => {
 
   it('should create', async () => {
     const record = await apps.CoreApp.factory.create('Sample', { name: 'New Sample' });
